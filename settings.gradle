@@ -1,0 +1,2 @@
+rootProject.name = "AvailVaccine"
+include ':app'
