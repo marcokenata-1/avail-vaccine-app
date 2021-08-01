@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import com.marcokenata.availvaccine.R
+import com.marcokenata.availvaccine.ui.main.MainFragmentArgs
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.details_fragment.*
 import javax.inject.Inject
@@ -30,7 +32,10 @@ class DetailsFragment : Fragment() {
         AndroidSupportInjection.inject(this)
         viewModel = ViewModelProvider(this, viewModelFactory).get(DetailsViewModel::class.java)
 
+        val x : MainFragmentArgs by navArgs()
+        val data = x.bundler
 
+        tv_test.text = data.toString()
         // TODO: Use the ViewModel
 
         viewModel.apiDataFetch.observe(viewLifecycleOwner, {

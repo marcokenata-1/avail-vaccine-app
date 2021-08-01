@@ -21,6 +21,7 @@
             app:destination="@id/detailsFragment" />
         <argument
             android:name="bundler"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="1068" />
     </fragment>
 </navigation>
