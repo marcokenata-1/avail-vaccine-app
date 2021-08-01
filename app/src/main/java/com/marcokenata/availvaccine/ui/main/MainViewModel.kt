@@ -35,6 +35,7 @@ class MainViewModel(
         launch {
             //loading data is used for view gone and visible the loading round thing
             loadingData.postValue(true)
+            vacRepository.fetchApiData().value
             covidDataFetch.postValue(vacRepository.fetchCovidNum().value)
             apiDataFetch.postValue(vacRepository.fetchApiData().value)
 

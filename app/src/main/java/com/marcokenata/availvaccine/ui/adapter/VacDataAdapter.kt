@@ -1,7 +1,6 @@
 package com.marcokenata.availvaccine.ui.adapter
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.marcokenata.availvaccine.R
 import com.marcokenata.availvaccine.data.network.response.Lokasi
-import com.marcokenata.availvaccine.ui.main.MainFragmentArgs
 import com.marcokenata.availvaccine.ui.main.MainFragmentDirections
 import kotlinx.android.synthetic.main.vac_ticket.view.*
 import java.util.*
@@ -37,7 +35,8 @@ class VacDataAdapter(var context: Context?, private var list: List<Lokasi>) :
 
             itemView.cv_vac_ticket.setOnClickListener {
                 val action = MainFragmentDirections.actionMainFragmentToDetailsFragment()
-                itemView.findNavController().navigate(action.actionId, bundleOf("bundler" to lokasi.kode_lokasi_vaksinasi))
+                itemView.findNavController()
+                    .navigate(action.actionId, bundleOf("bundler" to lokasi.kode_lokasi_vaksinasi))
             }
         }
 

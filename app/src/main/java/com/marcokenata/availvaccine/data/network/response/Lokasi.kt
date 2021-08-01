@@ -1,7 +1,7 @@
 package com.marcokenata.availvaccine.data.network.response
 
 data class Lokasi (
-    val kode_lokasi_vaksinasi: Int,
+    var kode_lokasi_vaksinasi: Int,
     val nama_lokasi_vaksinasi: String,
     val alamat_lokasi_vaksinasi: String,
     val wilayah: String,

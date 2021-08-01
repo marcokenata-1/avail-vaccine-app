@@ -35,8 +35,8 @@ class CovidDataAdapter(var context: Context?, list: ArrayList<CovidData>) :
     }
 
     class CovidDataViewHolder(view: View?) : RecyclerView.ViewHolder(view!!) {
-        private fun tvDetector(tv: TextView, item : String){
-            if (item.isNotEmpty()){
+        private fun tvDetector(tv: TextView, item: String) {
+            if (item.isNotEmpty()) {
                 tv.text = item
             } else {
                 tv.visibility = View.GONE
@@ -44,8 +44,8 @@ class CovidDataAdapter(var context: Context?, list: ArrayList<CovidData>) :
         }
 
         fun bind(covidData: CovidData) {
-            tvDetector(itemView.tv_covid_cases_num,covidData.itemNum)
-            tvDetector(itemView.tv_covid_ticket,covidData.itemDetail)
+            tvDetector(itemView.tv_covid_cases_num, covidData.itemNum)
+            tvDetector(itemView.tv_covid_ticket, covidData.itemDetail)
         }
     }
 }
