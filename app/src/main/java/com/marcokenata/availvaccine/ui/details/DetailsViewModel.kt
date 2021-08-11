@@ -22,8 +22,9 @@ class DetailsViewModel(
     override val coroutineContext: CoroutineContext
         get() = SupervisorJob() + Dispatchers.IO
 
-    val fetch = MutableLiveData<ArrayList<Lokasi>>()
+    private val fetch = SingleLiveEvent<ArrayList<Lokasi>>()
     var vacCodeFetch = MutableLiveData<Lokasi>()
+    var loadingData = MutableLiveData<Boolean>()
 
     private suspend fun invokeData(vacCode: Int){
         return withContext(Dispatchers.Main) {
@@ -42,7 +43,10 @@ class DetailsViewModel(
 
     fun invData(vacCode: Int){
         launch {
+            loadingData.postValue(true)
             invokeData(vacCode)
+        }.invokeOnCompletion {
+            loadingData.postValue(false)
         }
     }
 

@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.marcokenata.availvaccine.data.network.response.CountryData
-import com.marcokenata.availvaccine.data.network.response.CountryDetail
 import dagger.Module
 import dagger.Provides
 import retrofit2.await

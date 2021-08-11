@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface CovidNumDBService {
 
-    @GET("ID/recovered/")
+    @GET("ID/confirmed/")
     fun covidNumData(): Call<ArrayList<CountryData>>
 }

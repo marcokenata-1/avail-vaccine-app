@@ -1,9 +1,6 @@
 package com.marcokenata.availvaccine.data.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.Transformations
 import com.marcokenata.availvaccine.data.network.CovidNumDataSource
 import com.marcokenata.availvaccine.data.network.VacDataSource
 import com.marcokenata.availvaccine.data.network.response.CountryData
@@ -32,4 +29,6 @@ class VacRepository @Inject constructor(private val vacDataSource: VacDataSource
             return@withContext covidNumDataSource.apiData
         }
     }
+
+
 }

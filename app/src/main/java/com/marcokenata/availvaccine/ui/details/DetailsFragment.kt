@@ -35,19 +35,35 @@ class DetailsFragment : Fragment() {
         AndroidSupportInjection.inject(this)
         viewModel = ViewModelProvider(this, viewModelFactory).get(DetailsViewModel::class.java)
 
-        val x : MainFragmentArgs by navArgs()
+        val x: MainFragmentArgs by navArgs()
         val data = x.bundler
-        Log.d("DATA2",data.toString())
+        Log.d("DATA2", data.toString())
         viewModel.invData(data)
         observeData()
     }
 
-    private fun observeData(){
-        observe(viewModel.vacCodeFetch,::lokasiHandler)
+    private fun loadingData(boolean: Boolean) {
+        if (boolean) {
+            tv_test.visibility = View.GONE
+            cv_place.visibility = View.GONE
+            pb_loading.visibility = View.VISIBLE
+        } else {
+            tv_test.visibility = View.VISIBLE
+            cv_place.visibility = View.VISIBLE
+            pb_loading.visibility = View.GONE
+        }
     }
 
-    private fun lokasiHandler(lokasi: Lokasi){
+    private fun observeData() {
+        observe(viewModel.vacCodeFetch, ::lokasiHandler)
+        observe(viewModel.loadingData, ::loadingData)
+    }
+
+    private fun lokasiHandler(lokasi: Lokasi) {
         tv_test.text = lokasi.nama_lokasi_vaksinasi
+        tv_alamat_vaksin.text = lokasi.alamat_lokasi_vaksinasi
+        tv_kec_kel.text = "Kel ${lokasi.kelurahan} Kec ${lokasi.kecamatan}".capitalize()
+        tv_wilayah.text = lokasi.wilayah.capitalize()
     }
 
 }

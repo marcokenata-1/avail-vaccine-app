@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AvailVaccine</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoibWFyY29rZW5hdGFhIiwiYSI6ImNrcnRucTE3NzFvemoydW8xY2FkdGNtczcifQ.n7HacCRoBvb7bfH10KZgfw</string>
 </resources>

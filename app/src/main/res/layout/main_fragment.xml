@@ -19,11 +19,14 @@
 
     <TextView
         android:id="@+id/tv_text_title"
+        android:fontFamily="@font/questrial_reg"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
         android:text="AvailVaccine"
-        android:textSize="20dp"
+        android:textSize="24dp"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -32,8 +35,13 @@
     <TextView
         android:id="@+id/tv_covid_title"
         android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:layout_marginLeft="8dp"
+        android:fontFamily="@font/questrial_reg"
+
         android:text="COVID-19 Cases In Indonesia"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sv_test" />
@@ -50,7 +58,8 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tl_dots"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/tv_covid_last_update"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -64,6 +73,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
+        android:fontFamily="@font/questrial_reg"
+        android:textStyle="bold"
         android:textSize="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tl_dots" />
@@ -73,6 +84,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
+        android:fontFamily="@font/questrial_reg"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_marginTop="16dp"
         android:text="Vaccination Sites"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -82,6 +96,7 @@
         android:id="@+id/sv_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
         android:imeOptions="actionSearch"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -89,7 +104,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="250dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

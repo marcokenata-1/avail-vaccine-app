@@ -18,6 +18,7 @@ import com.marcokenata.availvaccine.ui.adapter.VacDataAdapter
 import com.marcokenata.availvaccine.util.observe
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.main_fragment.*
+import java.text.DateFormat
 import java.util.*
 import javax.inject.Inject
 
@@ -116,6 +117,7 @@ class MainFragment : Fragment() {
             tl_dots.visibility = View.GONE
             pb_loading.visibility = View.VISIBLE
         } else {
+            tl_dots.visibility = View.VISIBLE
             tv_covid_last_update.visibility = View.VISIBLE
             vp_card_views.visibility = View.VISIBLE
             tv_text_title.visibility = View.VISIBLE
@@ -123,7 +125,6 @@ class MainFragment : Fragment() {
             sv_test.visibility = View.VISIBLE
             tv_covid_title.visibility = View.VISIBLE
             rv_vaccine_list.visibility = View.VISIBLE
-            tl_dots.visibility = View.VISIBLE
             pb_loading.visibility = View.GONE
         }
     }
@@ -142,9 +143,10 @@ class MainFragment : Fragment() {
         }
 
         val lastUpdate = array[0].lastUpdate
+        val df = DateFormat.getDateInstance()
 
         tv_covid_last_update.text =
-            "Last updated at " + Date(lastUpdate.toLong() * 1000).toString()
+            "Last updated at " + df.format(Date(lastUpdate.toLong()))
     }
 
     private fun vaccineObserve(array: ArrayList<Lokasi>) {
